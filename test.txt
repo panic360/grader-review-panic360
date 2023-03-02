@@ -1,0 +1,19 @@
+JUnit version 4.13.2
+.E...E
+Time: 0.521
+There were 2 failures:
+1) testMergeArbitrary(Tester)
+org.junit.runners.model.TestTimedOutException: test timed out after 500 milliseconds
+	at app//ListExamples.merge(ListExamples.java:43)
+	at app//Tester.testMergeArbitrary(Tester.java:43)
+2) testFilterArbitrary(Tester)
+java.lang.AssertionError: expected:<[hello, b, c]> but was:<[c, b, hello]>
+	at org.junit.Assert.fail(Assert.java:89)
+	at org.junit.Assert.failNotEquals(Assert.java:835)
+	at org.junit.Assert.assertEquals(Assert.java:120)
+	at org.junit.Assert.assertEquals(Assert.java:146)
+	at Tester.testFilterArbitrary(Tester.java:25)
+
+FAILURES!!!
+Tests run: 4,  Failures: 2
+
