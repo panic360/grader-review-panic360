@@ -1,5 +1,6 @@
 CPATH='.:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar'
 NUMTEST=4
+rm -rf student-submission
 git clone $1 student-submission
 
 cp Tester.java student-submission
@@ -14,12 +15,12 @@ then
     then 
         echo "error in compiling"
     else
-        javac -cp ".:lib/hamcrest-core-1.3.jar:lib/junit-4.13.2.jar" *.java
-        java -cp ".:lib/junit-4.13.2.jar:lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore Tester > test.txt
+        javac -cp ".;lib/hamcrest-core-1.3.jar;lib/junit-4.13.2.jar" *.java
+        java -cp ".;lib/junit-4.13.2.jar;lib/hamcrest-core-1.3.jar" org.junit.runner.JUnitCore Tester > test.txt
         echo $(($NUMTEST-`head -n 2 test.txt | grep -o "E" | wc -l`)) out of $NUMTEST points achieved!
         rm test.txt;
     fi
-    rm -rf student-submission
+    
 else
     echo "file not found"
     exit 1
